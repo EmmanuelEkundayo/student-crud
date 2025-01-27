@@ -1,6 +1,4 @@
 package models;
-import services.impl.StudentServiceImpl;
-
 public class Teacher extends Staff {
     public Teacher(String name, int age, int salary) {
         super(name, age, salary);

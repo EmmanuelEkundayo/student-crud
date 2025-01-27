@@ -1,7 +1,6 @@
 package services;
 
 import models.*;
-import services.impl.StudentServiceImpl;
 
 import java.util.List;
 
@@ -11,7 +10,7 @@ public interface AdminService {
 
     List<Student> getSchoolRegister();
 
-    void expelStudent(Principal principal, Student student, StudentServiceImpl StudentServiceimpl);
+    void expelStudent(Principal principal, Student student, StudentService Studentservice);
 
     void payStaffSalary (SupportStaff bursar, Teacher teacher, SupportStaff OtherStaff);
     

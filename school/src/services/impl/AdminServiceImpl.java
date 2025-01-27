@@ -56,7 +56,7 @@ public class AdminServiceImpl implements AdminService {
         }
 
         if (entranceScore < 50){
-            System.err.println(String.format("YOU HAVE FAILED THE EXAM, YOUR SCORE IS %s AND CUT OFF IS %s,  BETTER LUCK NEXT TIME",entranceScore, "50"));
+            System.err.printf("YOU HAVE FAILED THE EXAM, YOUR SCORE IS %s AND CUT OFF IS %s,  BETTER LUCK NEXT TIME%n",entranceScore, "50");
             return;
 
         }
@@ -74,12 +74,12 @@ public class AdminServiceImpl implements AdminService {
 
 
     @Override
-    public void expelStudent(Principal principal, Student student, StudentServiceImpl StudentServiceimpl) {
-        if (StudentServiceimpl.getGrades().get("English") < 80 && StudentServiceimpl.getGrades().get("Math") < 80) {
+    public void expelStudent(Principal principal, Student student, StudentService Studentservice) {
+        if (Studentservice.getGrades().get("English") < 80 && Studentservice.getGrades().get("Math") < 80) {
                     System.out.println(student.getName() + " was expelled for failing both Math and English.");
-                } else if (StudentServiceimpl.getGrades().get("English") < 80) {
+                } else if (Studentservice.getGrades().get("English") < 80) {
                    System.out.println(student.getName() + " was expelled for failing English.");
-               } else if (StudentServiceimpl.getGrades().get("Math") < 80) {
+               } else if (Studentservice.getGrades().get("Math") < 80) {
                     System.out.println(student.getName() + " was expelled for failing Math.");
                 }
                 else{

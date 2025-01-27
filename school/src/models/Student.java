@@ -1,13 +1,8 @@
 package models;
 import services.StudentService;
-import services.impl.StudentServiceImpl;
-
-import java.util.HashMap;
-import java.util.Map;
-
 public class Student extends Person {
 
-    private String matricNumber;
+    private final String matricNumber;
     public Student(String name, int age, String matricNumber) {
         super(name, age);
         this.matricNumber = matricNumber;
