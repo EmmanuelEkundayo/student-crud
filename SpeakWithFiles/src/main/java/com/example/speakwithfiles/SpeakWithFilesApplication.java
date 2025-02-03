@@ -1,3 +1,5 @@
+package src.main.java.com.example.speakwithfiles;
+
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
@@ -5,19 +7,20 @@ import java.util.*;
 public class SpeakWithFilesApplication{
 
     public static void main(String[] args) {
-        String filePath = "src/main/resources/practice.txt";
-        int lineToEdit = 1;
+        String filePath = "SpeakWithFiles/src/main/resources/practice.txt";
+        int lineToEdit = 2;
         String newText = "Learned!!";
 
         try {
-            List<String> lines = Files.readAllLines(Paths.get(filePath));
-            if (lineToEdit - 1 >= 0 && lineToEdit - 1 < lines.size()) {
+            Path path = Paths.get(filePath);
+            List<String> lines = Files.readAllLines(path);
+            if (lineToEdit - 1 < lines.size()) {
                 lines.set(lineToEdit - 1, newText);
             } else {
                 System.out.println("Line number out of range.");
                 return;
             }
-            Files.write(Paths.get(filePath), lines);
+            Files.write(path, lines);
             System.out.println("File updated successfully.");
 
         } catch (IOException e) {
